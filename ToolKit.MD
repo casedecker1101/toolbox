@@ -5,7 +5,7 @@
 full_names = [
     f"{nameNormal(laureate['firstname'])} {nameNormal(laureate['surname'])}"
     for prize in read_json["prizes"]
-    for laureate in prize["laureates"]
+    for laureate in prize["laureates"]]
 
 # Reusable patterns
 
@@ -27,7 +27,7 @@ def normalize_text(value):
     return value.strip().lower().replace(" ", "")
 
 # quick use of lambda to find max value
-top_era = max(era_to_songs, key=lambda era: len(era_to_songs[era]["so
+top_era = max(era_to_songs, key=lambda era: len(era_to_songs[era]["songs]))
 top_count = len(era_to_songs[top_era]["songs"])
     
 results = [f"Era with the most songs: {top_era} ({top_count} songs)"]

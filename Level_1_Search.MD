@@ -46,6 +46,10 @@ matches = [x for x in items if condition(x)]
 # max()/min() - find the largest/smallest item
 winner = max(items, key=lambda x: x.score)
 
+# Prize entry with the latest year
+most_recent = max(read_json["prizes"], key=lambda prize: int(prize["year"]))
+winners = [laureate["firstname"] + " " + laureate["surname"] for laureate in most_recent.get(laureates", [])]
+
 # Map/Reduce - apply function to items and combine results
 from functools import reduce
 squared = [x**2 for x in items]
@@ -59,6 +63,9 @@ for x in items:
         return True
     seen.add(x)
     return False
+
+# Finding duplicate winner
+winner = max(set(full_names), key=lambda n: full_names.count(n))
 
 # Count with dictionary - when you need frequency counts
 counts = {}
