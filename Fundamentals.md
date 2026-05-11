@@ -24,7 +24,7 @@
 + Naming Conventions
     - Code readable months later
 + Refactoring instincts 
-    - Turn messy buils into clean ones
+    - Turn messy builds into clean ones
 
 + Bricks => syntax
 + Mini-builds => functions
