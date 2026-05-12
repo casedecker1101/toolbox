@@ -56,7 +56,7 @@ class IntakeForm:
         print("All required documents are valid.")
         return True
 
-    def housingStatus(self,self.housing_status):
+    def housingStatus(self):
         if self.housing_status == "unhoused":
             return True
         else:
