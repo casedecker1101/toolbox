@@ -1,4 +1,4 @@
-V# Pythonic Fundamentals: Daily One-Hour Review Guide
+# Pythonic Fundamentals: Daily One-Hour Review Guide
 
 > "I wish I knew this earlier." — Every Python developer, eventually.
 
@@ -12,7 +12,7 @@ Review one section per day. Rotate through them. The goal is not to finish — i
 - Read the concept (10 min)
 - Write an example from memory — no copying (20 min)
 - Try a small variation or experiment (20 min)
-- Write 6^6ccone sentence summarizing what you practiced (10 min)
+- Write one sentence summarizing what you practiced (10 min)
 
 ---
 
