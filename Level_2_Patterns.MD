@@ -10,6 +10,10 @@
 
 ---------- Code ----------
 
+
+# Search and find maximum items/users/objects and creates a list within JSON files
+max_joint_count = max(len(prize.get("laureates", [])) for prize in read_json["prizes"])
+
 # Guard Clause Pattern - sharp pattern, short functions
 # Clean, readable and free of nesting hell
 if condition:
