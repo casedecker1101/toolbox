@@ -1,10 +1,15 @@
 class Client:
-    def __init__(self,name,age,vulnerabilities,documents = None):
+    def __init__(self,name,age,risk_factors,needs,documents = None):
         self.name = name
         self.age = age
-        self.vulnerabilities = vulnerabilities
+        self.risk_factors = risk_factors
+        self.needs = needs
         self.documents = documents or []
         self.status = "intake_pending"
+
+    def priority_score(self):
+        # Equivalent to "derived stats"
+        return len(self.risk)factors) + (1 if "unsheltered" in self.needs else 0)
 
 class Shelter:
     def __init__(self, name, capacity):
