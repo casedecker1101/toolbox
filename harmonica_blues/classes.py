@@ -9,7 +9,7 @@ class Client:
 
     def priority_score(self):
         # Equivalent to "derived stats"
-        return len(self.risk)factors) + (1 if "unsheltered" in self.needs else 0)
+        return len(self.risk_factors) + (1 if "unsheltered" in self.needs else 0)
 
 class Shelter:
     def __init__(self, name, capacity):
