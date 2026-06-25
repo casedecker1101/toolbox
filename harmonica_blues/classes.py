@@ -7,10 +7,74 @@ class Client:
         self.documents = documents or []
         self.status = "intake_pending"
 
-    def priority_score(self):
-        # Equivalent to "derived stats"
-        return len(self.risk)factors) + (1 if "unsheltered" in self.needs else 0)
+# ------------------------
+# Priority and Eligibility
+# ------------------------
 
+    def priority_score(self):
+        """Compute urgency based on risk factors"""
+        base = len(self.risk_factors)
+        if "unsheltered" in self.risk_factors:
+            base += 2
+        return base
+
+    def is_eligible(self, provider):
+        """Check if the client meets a provider's requirements."""
+        required = provider.requirements()
+        missing = self.missing_documents(required)
+        return len(missing) == 0
+
+# ----------------------
+# Document Handling
+# ----------------------
+    def add_document(self,documtne):
+        """Attach a document to the client."""
+        self.documents.append(document)
+
+    def missing_documents(self, required_docs):
+        """Return a list of required documents hte client does not have."""
+        return [
+            doc_type for doc_type in required_docs
+            if not any(d.type == doc_type for d in self.documents)
+        ]
+
+# ---------------------
+# Status & Lifecycle
+# ---------------------
+def update_status(self, new_status):
+    """Update the client's lifecycle state."""
+    self.status = new_status
+
+# ---------------------
+# Service Plan
+# ---------------------
+def assign_service_plan(self, plan):
+    """Attach a service plan to the client."""
+    self.service_plan = plan
+
+def progress(self):
+    """Advance the client's service plan."""
+    if self.service_plan:
+        self.service_plan.advance()
+
+# ------------------
+# Summary
+# ------------------
+
+def summary(self):
+    """Return a readable snapshot of the client's state."""
+    return {
+        "name": self.name,
+        "age": self.age,
+        "status": self.status,
+        "vulnerabilities": self.vulnerabilities,
+        "documents": [d.type for d in self.documents],
+        "priority_score": self.priority_score(),
+        "service_plan":(
+            self.service_plan.summary() if self.service_plan else None
+        )
+    }
+    
 class Shelter:
     def __init__(self, name, capacity):
         self.name = name

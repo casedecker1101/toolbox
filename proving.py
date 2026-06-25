@@ -1,22 +1,11 @@
-class generalNPC(self,hp,mp,defense,strength,vit,agi,mnd):
-    self.__init__ = self
-    self.hp = hp
-    self.mp = mp
-    self.defense = defense
-    self.strength = strength
-    self.vit = vit
-    self.agi = agi
-    self.mnd = mnd
+letters = ["a", "b", "c", "d"]
+doubled = list(map(lambda x: x * 2, letters))
+print(doubled)
 
 
-def goblinLeader(generalNPC,status = None):
-    if status is None:
-        current_status = []
-    status.append(stats)
-    return status
+number = 39475093475
+floor = list(map(lambda x: int(x) // 2, str(number)))
+print(floor)
 
-def heroStatus(generalNPC, status = None):
-    if status is None:
-        current_status = []
-    status.append(stats)
-    return status
+def 
+
